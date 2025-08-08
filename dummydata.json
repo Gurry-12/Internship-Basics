@@ -1,0 +1,47 @@
+{
+  "data" : [
+  {
+    "_comment": "Sent Data",
+    "id": 0,
+    "userId": "211",
+    "title": "new sent data",
+    "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo voluptatum facilis animi tenetur, temporibus iusto natus nesciunt? Officia excepturi id aliquam vel optio quisquam, blanditiis voluptatem ipsa, dolore error officiis.",
+    "roleIds": [
+      "clinician",
+      "staff"
+    ],
+    "isScheduled": false,
+    "status": "Sent"
+  },
+  {
+    "data": {
+      "userId": 211,
+      "practiceId": 57,
+      "title": "new sent data",
+      "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo voluptatum facilis animi tenetur, temporibus iusto natus nesciunt? Officia excepturi id aliquam vel optio quisquam, blanditiis voluptatem ipsa, dolore error officiis.",
+      "roleIds": [
+        "clinician",
+        "staff"
+      ],
+      "isScheduled": false,
+      "scheduledAt": null,
+      "sentAt": null,
+      "status": "Sent",
+      "id": 0
+    },
+    "isSuccess": true,
+    "statusCode": 200,
+    "message": "",
+    "errors": [],
+    "pagination": {
+      "pageNumber": 0,
+      "pageSize": 0,
+      "totalRecords": 0,
+      "totalPages": 0
+    }
+  }
+],
+"data1" : [
+  
+]
+}

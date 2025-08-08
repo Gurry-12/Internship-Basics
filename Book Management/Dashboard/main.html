@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book Shelf</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f5f6fb;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .sidebar {
+            background: linear-gradient(to bottom, #ff5e62, #ff9966);
+            color: #fff;
+            height: 100vh;
+            position: fixed;
+            width: 220px;
+            padding: 1rem;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 1rem 0;
+            display: block;
+        }
+        .sidebar a:hover {
+            color: #ffe;
+        }
+        .content {
+            margin-left: 240px;
+            padding: 2rem;
+        }
+        .quote-box {
+            background: linear-gradient(to right, #aa076b, #61045f);
+            color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        .book-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            width: 150px;
+        }
+        .book-row {
+            overflow-x: auto;
+            display: flex;
+            gap: 1rem;
+            padding-bottom: 1rem;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .tag-pill {
+            background-color: #9c27b0;
+            color: white;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h4><span style="color: #000">My</span> <span style="color: #fff">Book<br>Shelf</span></h4>
+        <a href="#"><i class="bi bi-house-door"></i> Home</a>
+        <a href="#"><i class="bi bi-search"></i> Search</a>
+        <a href="#"><i class="bi bi-book"></i> My Shelf</a>
+        <a href="#"><i class="bi bi-pencil-square"></i> Contribute</a>
+        <hr>
+        <a href="#">About</a>
+        <a href="#">Support</a>
+        <a href="#">Terms & Condition</a>
+    </div>
+
+    <div class="content">
+        <div class="top-bar">
+            <div class="d-flex gap-2">
+                <select class="form-select w-auto">
+                    <option>All</option>
+                </select>
+                <input type="text" class="form-control" placeholder="Search">
+                <button class="btn btn-light"><i class="bi bi-search"></i></button>
+                <select class="form-select w-auto"> <option>Lang</option> </select>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <span><i class="bi bi-clock"></i> 09:00 AM</span>
+                <span><i class="bi bi-calendar"></i> 4-Mar-2023</span>
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle"></i> Kenson
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="quote-box">
+                    <p>“There is more treasure in books than in all the pirate's loot on Treasure Island.”</p>
+                    <p class="text-end">-Walt Disney</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <span class="tag-pill">New Arrivals</span>
+                    <div class="book-row mt-2">
+                        <div class="book-card">Holy Bible</div>
+                        <div class="book-card">Harry Potter</div>
+                        <div class="book-card">Lean UX</div>
+                        <div class="book-card">Don't Make Me Think</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h4>Good Morning</h4>
+        <h6 class="text-muted">Recommended for You</h6>
+        <div class="book-row">
+            <div class="book-card">Don't Make Me Think</div>
+            <div class="book-card">The Design of Everyday Things</div>
+            <div class="book-card">Sprint</div>
+            <div class="book-card">Lean UX</div>
+            <div class="book-card">React</div>
+            <div class="book-card">Rich Dad Poor Dad</div>
+        </div>
+
+        <h6 class="text-muted">Recent Readings</h6>
+        <div class="book-row">
+            <div class="book-card">Don't Make Me Think</div>
+            <div class="book-card">The Design of Everyday Things</div>
+            <div class="book-card">Sprint</div>
+            <div class="book-card">Lean UX</div>
+            <div class="book-card">React</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

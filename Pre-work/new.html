@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<head>
+  <title>Doc</title>
+  <style>
+      #new {
+            /* background-color: lightblue; */
+            background: url("download_1.png") no-repeat center;
+            border: thick solid green;
+            border-radius: 30px;
+            margin: 20px;
+            padding: 10px;
+            outline: 1px solid red;
+            outline-offset: 10px;
+    }
+
+    a:link {
+          color: green;
+          background-color: transparent;
+          text-decoration: none;
+          
+        }
+        
+        a:visited {
+          color: blue;
+          background-color: transparent;
+          text-decoration: none;
+          font-family: 'Courier New', Courier, monospace;
+        }
+        
+        a:hover {
+          color: red;
+          background-color: transparent;
+          text-decoration: underline;
+          font-size: 10px;
+          text-shadow: 20px 20px 20px blueviolet;
+        }
+        
+        a:active {
+          color: rgb(164, 164, 66);
+          background-color: transparent;
+          text-decoration: underline;
+        }
+
+        #customers, .customers {
+          border: 2px solid powderblue;
+          text-align: left;
+          margin: 2px;
+          box-sizing: border-box;
+          width: 500px;
+          background-color: bisque;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        #customers td, .customers td {
+          border: 2px solid powderblue;
+          padding-left: 5px;
+
+        }
+
+        #customers tr :hover{ background-color: lightgrey;}
+
+        #customers th {
+          background-color: green;
+          padding-left: 5px;
+        }
+
+        .customers th {
+          background-color: burlywood;
+          padding-left: 5px;
+        }
+        #fname {
+          font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        input, label {
+          margin: 2px;
+          text-align: left;
+          align-content: left;
+        }
+        
+  </style>
+</head>
+<html>
+<body class="new" id="new">
+
+<h2>Submit Button</h2>
+
+<p>The <strong>input type="submit"</strong> defines a button for submitting form data to a form-handler:</p>
+
+<form >
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<h4> targets</h4>
+<p><a href="https://www.w3schools.com/" target="_blank">Visit W3Schools! blank </a></p>
+<p><a href="https://www.w3schools.com/" target="_self">Visit W3Schools! self </a></p>
+<p><a href="https://www.w3schools.com/" target="_parent">Visit W3Schools! parent </a></p>
+<p><a href="https://www.w3schools.com/" target="_top">Visit W3Schools! top </a></p>
+
+<br>
+
+<table id="customers">
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbköp</td>
+    <td>Christina Berglund</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  </table>
+
+  <br><br>
+<p>If you click "Submit", the form-data will be sent to a page called "/action_page.php".</p>
+
+<br><br>
+
+<div style="overflow-x: auto;" class="customers">
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <td>Adam</td>
+      <td>Johnson</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
+

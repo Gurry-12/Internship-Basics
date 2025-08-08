@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Form</title>
+</head>
+<body>
+
+    <h1>Form</h1>
+
+    <form >
+        <fieldset>
+            <legend>Basic Information</legend>
+            <label for="fname">First name</label><br>
+            <input type="text" id="fname" name="fname" placeholder="Gurpreet" required>
+            <br><br>
+            <label for="lname">Last name</label><br>
+            <input type="text" id="lname" name="lname" placeholder="Singh" required>
+            <br><br>
+            <label for="Email">Email</label><br>
+            <input type="email" id="Email" name="Email" placeholder="xyz@abc.x" >
+            <br><br>
+            <label for="mobile">Contact No.</label><br>
+            <input type="tel" id="mobile" name="mobile" pattern="+91[0-9]{10}" placeholder="+911234567890">
+            <br><br>
+
+            <label for="department">Depatment</label><br>
+            <input type="text" name="department" id="department" >
+        </fieldset>
+
+        <fieldset>
+            <legend>Choices</legend>
+            <br>
+            <p>Let's create some list here</p>
+            <p>Choose your favorite drink</p>
+            <input type="radio" name="drink" value="Coffee" id="coffee" >
+            <label for="coffee">Coffee</label> <br>
+            <input type="radio" name="drink" value="Tea" id="tea" >
+            <label for="tea">Tea</label> <br>
+            <input type="radio" name="drink" value="Milk" id="milk" >
+            <label for="milk">Milk</label> <br>
+            
+            <p>Pick your favorite languages</p>
+            <input type="checkbox" name="language1" id="C" value="C">
+            <label for="C">C</label><br>
+            <input type="checkbox" name="language2" id="C++" value="C++">
+            <label for="C++">C++</label><br>
+            <input type="checkbox" name="language3" id="python" value="python">
+            <label for="python">Python</label><br>
+            <input type="checkbox" name="language4" id="JS" value="JS">
+            <label for="JS">JS</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Your own Thoughts</legend>
+
+            <p>What you think about AI</p>
+            <textarea name="AI" id="ai" cols="50" rows="10" ></textarea>
+            <br>
+            <p>Share your Personal Experience</p>
+            <textarea name="p-e" id="p-e" cols="50" rows="10" ></textarea>
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>More </legend>
+            <p>Select your car</p>
+            <select name="car" id="car">
+                <option value="BMW">BMW</option>
+                <option value="audi">Audi</option>
+                <option value="porshe">Porshe</option>
+            </select>
+            <br>
+
+            <p>Select your City</p>
+            <input list="city" name="city">
+            <datalist id="city">
+                <option value="Rajasthan"></option>
+                <option value="Punjab"></option>
+                <option value="J&K"></option>
+                <option value="Himachal"></option>
+                <option value="Gujrat"></option>
+            </datalist>
+        </fieldset>
+        <br>
+        <input type="button" value="Submit" onclick="alert('Submitted')">
+    </form>
+    
+</body>
+</html>

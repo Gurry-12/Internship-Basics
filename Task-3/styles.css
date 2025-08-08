@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    width :  100%;
+}
+
+
+.header {
+background-color: #ffffff;
+height: 50px;
+width : 100%;
+display : flex;
+justify-content: space-between;
+align-items: center;
+position : fixed;
+z-index: 1;
+
+box-shadow: 5px 5px 5px rgb(193, 190, 190);
+
+
+}
+
+.header> a {
+    margin-left: 50px;
+}
+
+a {
+text-decoration: none;
+color : black;
+font-size: small;
+padding: 10px;
+}
+
+a:hover {
+    background-color: lightgray;
+   
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display : inline;
+    padding-right: 20px;
+}
+
+.navbar {
+    float : right;
+}
+
+.home {
+    position: relative;
+    z-index : 0;
+}
+
+.bottomleft {
+    position: absolute;
+    bottom: 8px;
+    left : 12px;
+    color: gray;
+    font-size: xx-large;
+  }
+
+.About {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.mid-box {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    place-self: baseline;
+    column-gap: 20px;
+    width : 80%;
+    margin: auto;
+
+}
+
+.content-section h1 {
+    text-align: center; 
+    font-weight: normal;
+}
+
+.img-section, .img-section1 {
+    align-self: center;
+}
+
+.img {
+    object-fit :cover;
+    opacity: 0.8;
+    
+}
+
+.content-section {
+    line-height: 1.5;
+    word-spacing: 1.4px;
+}
+
+.content-section p {
+    text-align: left; 
+    padding-top: 50px;
+}
+
+.Menu {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.Menu h2 {
+
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: xx-large;
+    font-weight: normal;
+     
+}
+
+.Menu h3 {
+    padding-top: 40px;
+    font-weight: normal;
+    font-size: medium;
+}
+
+.Menu p {
+    line-height: 1.5rem;
+    font-size: smaller;
+    opacity: 0.8;
+}
+
+.content-section1 {
+    padding-left: 80px;
+}
+
+.img1 {
+    object-fit :cover;
+    opacity: 0.8;
+}
+
+
+hr {
+    background-color : rgb(255, 249, 249);
+    margin: auto;
+    width : 70%;
+}
+
+.Contact {
+    margin-top: 50px;
+    height : auto;
+    width :100%;
+    margin-bottom: 100px;
+}
+
+.center-box {
+    width : 70%;
+    margin: auto;
+    height : 700px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type=text], input[type=datetime-local], input[type=number] {
+    border-style: none;
+    border-bottom: solid 1px #e5e5e5 ;
+    width: 100%;
+    padding : 20px;
+    margin-top: 5px;
+    padding-left: 5px;
+    
+}
+
+input[type=submit] {
+    margin-top: 20px;
+    padding : 10px;
+    border-style: none;
+}
+
+input[type=submit]:hover {
+    background-color: #cccccc;
+}
+
+.Contact h3 {
+    font-weight: normal;
+    font-size: x-large;
+}
+
+.Contact p {
+    line-height: 1.6rem;
+    margin-top: 15px;
+    font-size: small;
+}
+
+.new {
+    color : #607d8b;
+    font-size : larger;
+}
+
+footer {
+    background-color: #607d8b;
+    color : white;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width : 700px) {
+
+    .header> a {
+        margin-left: 30px;
+    }
+
+    .img {
+        display: none;
+    }
+
+    .mid-box {
+        display: inline-block
+
+    }
+
+    .content-section h1 {
+        margin-top: 0;
+    }
+
+    .content-section {
+        padding-left: 20px;
+    }
+
+    .img1 {
+        width : 100%;
+        padding-left: 20px;
+    }
+
+    body p {
+        font-size: small;
+
+    }
+
+    .content-section1 {
+        padding-left: 20px;
+    }
+
+    .center-box {
+        padding: 20px;
+        margin: 0;
+        height: 700px;
+    }
+
+    li {
+        padding-right: 10px;
+    }
+
+    a {
+        padding: 0;
+    }
+
+    .bottomleft {
+        font-size: medium;
+    }
+
+    .Contact {
+        height: 850px;
+    }
+    
+}
+
+@media screen and (max-width : 450px) {
+    
+    .header {
+        padding: 0;
+        margin: 0;
+        font-size: x-small;
+    }
+
+    li {
+        padding-right: 0;
+    }
+
+    a {
+        padding: 0;
+    }
+
+    .header> a {
+        margin-left: 10px;
+    }
+
+    .bottomleft {
+        font-size: small;
+    }
+    
+}
+

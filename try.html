@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Page Load Tracker</title>
+    <style>
+        /* Full-screen loading overlay */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loading">Loading... Please wait</div>
+
+    <h1>Complex Page - Check Console for Load Times</h1>
+    
+    <!-- Large Image for Testing -->
+    <img id="largeImage" src="https://picsum.photos/3000/2000" alt="Large Image">
+
+    <!-- jQuery (for $(document).ready) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        const startTime = performance.now(); // Start tracking time
+
+        // 1️⃣ DOMContentLoaded - When HTML is parsed
+        document.addEventListener("DOMContentLoaded", function () {
+            const domLoadedTime = performance.now();
+            console.log(`🔥 DOMContentLoaded: ${Math.round(domLoadedTime - startTime)} ms`);
+        });
+
+        // 2️⃣ jQuery Ready - Equivalent to DOMContentLoaded
+        $(document).ready(function () {
+            const jQueryReadyTime = performance.now();
+            console.log(`✅ $(document).ready(): ${Math.round(jQueryReadyTime - startTime)} ms`);
+        });
+
+        // 3️⃣ Track When All Images Are Loaded
+        function checkImagesLoaded() {
+            const images = document.querySelectorAll("img");
+            let loadedImages = 0;
+
+            images.forEach(img => {
+                if (img.complete) {
+                    loadedImages++;
+                } else {
+                    img.onload = () => {
+                        loadedImages++;
+                        if (loadedImages === images.length) {
+                            console.log(`🖼️ All images loaded in ${Math.round(performance.now() - startTime)} ms`);
+                        }
+                    };
+                }
+            });
+
+            if (loadedImages === images.length) {
+                console.log(`🖼️ All images loaded in ${Math.round(performance.now() - startTime)} ms`);
+            }
+        }
+        checkImagesLoaded();
+
+        // 4️⃣ Track AJAX Completion (Mock AJAX Request)
+        let ajaxComplete = false;
+        function fakeAjaxRequest() {
+            console.log("⏳ Starting AJAX call...");
+            setTimeout(() => {
+                ajaxComplete = true;
+                console.log(`📡 AJAX call completed in ${Math.round(performance.now() - startTime)} ms`);
+                checkPageLoad();
+            }, 3000); // Simulate 3-second AJAX delay
+        }
+        fakeAjaxRequest();
+
+        // 5️⃣ Window Load - When everything is fully loaded
+        window.onload = function () {
+            const totalLoadTime = performance.now();
+            console.log(`🚀 window.onload: Page fully loaded in ${Math.round(totalLoadTime - startTime)} ms`);
+
+            checkPageLoad(); // Check if everything is ready
+        };
+
+        // 6️⃣ Hide Loader When Everything is Done
+        function checkPageLoad() {
+            if (document.readyState === "complete" && ajaxComplete) {
+                document.getElementById("loading").style.display = "none";
+            }
+        }
+
+        // 7️⃣ Show Warning if Page Takes Too Long (10 sec)
+        setTimeout(function () {
+            if (document.readyState !== "complete" || !ajaxComplete) {
+                alert("⚠️ This page is taking longer than expected...");
+            }
+        }, 10000); // 10 seconds timeout
+
+    </script>
+
+</body>
+</html>
+/* Logo 1 */
+
+position: absolute;
+width: 250px;
+height: 153.59px;
+left: 785px;
+top: 413px;
+
+background: url(Logo.png);

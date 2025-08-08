@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign UP Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div id="signup-container" class="container-fluid w-100 vh-100 d-flex justify-content-center align-items-center">
+
+        <div class="card mx-auto bg-light shadow border-0" style="width: 25rem; ">
+            <div class="card-body">
+                <div class="cart-title text-center">
+                    <h1>Registration Page</h1>
+                </div>
+
+                <div class="text-center mb-4 mx-auto w-25 my-4">
+                    <img src="image.png" class="img-fluid" alt="image">
+                </div>
+
+                <form action="#" method="POST" novalidate>
+                    <div class="mb-3">
+                        <label for="FirstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="FirstName" name="FirstName" required>
+                        <span class="text-danger" id="FirstNameError"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="LastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="LastName" name="LastName" required>
+                        <span class="text-danger" id="LastNameError"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="Email" name="Email" required>
+                        <span class="text-danger" id="EmailError"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                        <span class="text-danger" id="PasswordError"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                        <span class="text-danger" id="ConfirmPasswordError"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Sign UP</button>
+
+                    <div class="mt-3">
+                        <p class="fs-6 text-center">Already registered? 
+                            <a href="/Auth/Login" class="link-dark">Login</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        function displayError(elementId, message) {
+            const errorElement = document.getElementById(elementId + 'Error');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        function clearError(elementId) {
+            const errorElement = document.getElementById(elementId + 'Error');
+            errorElement.textContent = '';
+            errorElement.style.display = 'none';
+        }
+
+        // Real-time validation
+        document.getElementById('FirstName').addEventListener('input', function () {
+            this.value.length < 2 ? displayError('FirstName', 'First name must be at least 2 characters long.') : clearError('FirstName');
+        });
+
+        document.getElementById('LastName').addEventListener('input', function () {
+            this.value.length < 2 ? displayError('LastName', 'Last name must be at least 2 characters long.') : clearError('LastName');
+        });
+
+        document.getElementById('Email').addEventListener('input', function () {
+            const pattern = /\S+@\S+\.\S+/;
+            !pattern.test(this.value) ? displayError('Email', 'Please enter a valid email address.') : clearError('Email');
+        });
+
+        document.getElementById('password').addEventListener('input', function () {
+            this.value.length < 6 ? displayError('Password', 'Password must be at least 6 characters long.') : clearError('Password');
+        });
+
+        document.getElementById('confirmPassword').addEventListener('input', function () {
+            const password = document.getElementById('password').value;
+            this.value !== password ? displayError('ConfirmPassword', 'Passwords do not match.') : clearError('ConfirmPassword');
+        });
+
+        // Optional: Validate all again on form submit
+        document.querySelector('form').addEventListener('submit', function (event) {
+            const firstName = document.getElementById('FirstName').value;
+            const lastName = document.getElementById('LastName').value;
+            const email = document.getElementById('Email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            let isValid = true;
+
+            if (firstName.length < 2) {
+                displayError('FirstName', 'First name must be at least 2 characters long.');
+                isValid = false;
+            }
+
+            if (lastName.length < 2) {
+                displayError('LastName', 'Last name must be at least 2 characters long.');
+                isValid = false;
+            }
+
+            if (!/\S+@\S+\.\S+/.test(email)) {
+                displayError('Email', 'Please enter a valid email address.');
+                isValid = false;
+            }
+
+            if (password.length < 6) {
+                displayError('Password', 'Password must be at least 6 characters long.');
+                isValid = false;
+            }
+
+            if (password !== confirmPassword) {
+                displayError('ConfirmPassword', 'Passwords do not match.');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                event.preventDefault(); // Prevent form submission if any validation fails
+            }
+        });
+    </script>
+</body>
+</html>
